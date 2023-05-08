@@ -10,8 +10,8 @@ $(function(){
             $detail = $('#detail'),
             $ul = $('#detailsList'),
             li = '<li><a href="#pgDetailsDetail?item=LINK">ID</a></li>',
-            detailsHdr = '<li data-role="list-divider">Your Items</li>',
-            noDetails = '<li id="noDetails">You have no items</li>';
+            detailsHdr = '<li data-role="list-divider">Your Songs</li>',
+            noDetails = '<li id="noDetails">You have no songs</li>';
 
         app.init=function(){
             app.bindings();
