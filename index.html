@@ -1,0 +1,256 @@
+<!--
+Title: niftyPLUS Music Application
+Use: This html file contains all of the code for the niftyPLUS Music Application Pages
+Author: Brenton Morgan
+School/Term: Southern Illinois University, Spring 2023
+Developed: May 7, 2023
+Tested: May 7, 2023; Passed with no problems.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="themes/niftyPLUS.min.css" />
+  	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+
+<!--Home Page-->
+<div data-role="page" id="homePage">
+
+	<div data-role="header"><h1>Home Page</h1></div>
+
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#homePage" data-icon="home" data-ajax="false" class="ui-btn-active">HOME</a></li>
+			<li><a href="#libPage" data-ajax="false">LIBRARY</a></li>
+			<li><a href="#stemPage" data-prefetch="true" data-transition="pop" data-ajax="false">STEM PLAYER</a></li>
+			<li><a href="#genrePage" data-prefetch="true" data-transition="pop" data-ajax="false">GENRES</a></li>
+			<li><a href="#aboutPage" data-prefetch="true" data-transition="pop" data-ajax="false">ABOUT</a></li>
+			<li><a href="#contactPage" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a></li>
+		</ul>
+	</div>
+	<div role="main" class="ui-content">
+		<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<h2>Introduction</h2>
+						<p>
+							This web application is dedicated to assisting in created a moving plan. The basic capabilites of this web application should be sufficient for most users. This application was developed specifically for the Carbondale and greater Southern Illinois area. 
+						</p>
+				</div> 
+				<div class="ui-block-b"></div>
+					<h2>Instructions</h2>
+						<p>
+							You can use the navigational tabs above to look around our site. 
+							To learn about the site and the developers behind it, go to the <a href="about.html" data-ajax="false">ABOUT</a> tab. 
+							To read the instructions on creating a moving plan, go to the <a href="instructions.html" data-prefetch="true" data-transition="pop" data-ajax="false">INSTRUCTIONS</a> tab. 
+							To begin planning, go to the <a href="planner.html" data-prefetch="true" data-transition="pop" data-ajax="false">PLANNER</a> tab. 
+							To contact us for any reason, go to the <a href="contact.html" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a> tab. 
+							Here is the website for the school I attend:
+							<a href="https://www.siu.edu/" data-ajax="false">SIU Website</a>
+						</p>
+				</div> 
+		</div>
+	</div>
+	
+
+	<div data-role="footer">
+	<h4>niftyPLUS Music Application</h4>
+	</div>
+	
+</div>
+
+<!--Library Page-->
+<div data-role="page" id="libPage">
+
+	<div data-role="header"><h1>Display Items</h1></div>
+
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#homePage" data-icon="home" data-ajax="false" class="ui-btn-active">HOME</a></li>
+			<li><a href="#libPage" data-ajax="false">LIBRARY</a></li>
+			<li><a href="#stemPage" data-prefetch="true" data-transition="pop" data-ajax="false">STEM PLAYER</a></li>
+			<li><a href="#genrePage" data-prefetch="true" data-transition="pop" data-ajax="false">GENRES</a></li>
+			<li><a href="#aboutPage" data-prefetch="true" data-transition="pop" data-ajax="false">ABOUT</a></li>
+			<li><a href="#contactPage" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a></li>
+		</ul>
+	</div>
+	<div role="main" class="ui-content">
+		<ul id="detailsList" data-role="listview" data-inset="true"></ul>
+	</div>
+	
+	<p>Click here to <a href="#addPage" data-prefetch="true" data-transition="pop" data-ajax="false">add songs</a> to your library.</p>
+
+	<div data-role="footer">
+	<h4>Brenton's Mobile Web Application</h4>
+	</div>
+	
+</div>
+
+<!--Add Page-->
+<div data-role="page" id="addPage">
+
+	<div data-role="header"><h1>Library</h1></div>
+
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#homePage" data-icon="home" data-ajax="false" class="ui-btn-active">HOME</a></li>
+			<li><a href="#libPage" data-ajax="false">LIBRARY</a></li>
+			<li><a href="#stemPage" data-prefetch="true" data-transition="pop" data-ajax="false">STEM PLAYER</a></li>
+			<li><a href="#genrePage" data-prefetch="true" data-transition="pop" data-ajax="false">GENRES</a></li>
+			<li><a href="#aboutPage" data-prefetch="true" data-transition="pop" data-ajax="false">ABOUT</a></li>
+			<li><a href="#contactPage" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a></li>
+		</ul>
+	</div>
+	<div role="main" class="ui-content">
+	<form>
+		<div class="ui-field-contain">
+			<input id="song" type="text" placeholder="Song Name"/>
+		</div>
+		<div class="ui-field-contain">
+			<input id="artist" type="text" placeholder="Artist"/>
+		</div>
+		<div class="ui-field-contain">
+			<input id="album" type="text" placeholder="Album"/>
+		</div>
+		<label for="genre">Genre:</label>
+		<select name="genre" id="genre">
+			<option value="blues">Blues</option>
+			<option value="classical">Classical</option>
+			<option value="country">Country</option>
+			<option value="electronic">Electronic</option>
+			<option value="folk">Folk</option>
+			<option value="hiphop">Hip-hop</option>
+			<option value="jazz">Jazz</option>
+			<option value="newage">New Age</option>
+			<option value="reggae">Reggae</option>
+			<option value="rock">Rock</option>
+		</select>
+		<input data-icon="edit" id="btnAddItem" type="button" value="Add Item"/>
+	</form>
+
+	</div>
+
+	<div data-role="footer">
+	<h4>niftyPLUS Music Application</h4>
+	</div>
+	
+</div>
+
+<!--Genres Page-->
+<div data-role="page" id="genrePage">
+
+	<div data-role="header"><h1>Genres</h1></div>
+
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#homePage" data-icon="home" data-ajax="false" class="ui-btn-active">HOME</a></li>
+			<li><a href="#libPage" data-ajax="false">LIBRARY</a></li>
+			<li><a href="#stemPage" data-prefetch="true" data-transition="pop" data-ajax="false">STEM PLAYER</a></li>
+			<li><a href="#genrePage" data-prefetch="true" data-transition="pop" data-ajax="false">GENRES</a></li>
+			<li><a href="#aboutPage" data-prefetch="true" data-transition="pop" data-ajax="false">ABOUT</a></li>
+			<li><a href="#contactPage" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a></li>
+		</ul>
+	</div>
+	<div role="main" class="ui-content">
+		
+	<p>
+		To use this web application, navigate through the pages above to research the options for services and supplies you might need when moving. 
+		Then, go to the <a href="planner.html" data-prefetch="true" data-transition="pop" data-ajax="false">PLANNER</a> tab to begin your planner. 
+		There, you can look at an overview of your plan, add items to your plan, and display items for your plan. If you have any issues or questions, 
+		feel free to visit our <a href="contact.html" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a> page and send a message. 
+	</p>
+	</div>
+	
+
+	<div data-role="footer">
+	<h4>niftyPLUS Music Application</h4>
+	</div>
+	
+</div>
+
+<!--About Page-->
+<div data-role="page" id="aboutPage">
+
+	<div data-role="header"><h1>About</h1></div>
+
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#homePage" data-icon="home" data-ajax="false" class="ui-btn-active">HOME</a></li>
+			<li><a href="#libPage" data-ajax="false">LIBRARY</a></li>
+			<li><a href="#stemPage" data-prefetch="true" data-transition="pop" data-ajax="false">STEM PLAYER</a></li>
+			<li><a href="#genrePage" data-prefetch="true" data-transition="pop" data-ajax="false">GENRES</a></li>
+			<li><a href="#aboutPage" data-prefetch="true" data-transition="pop" data-ajax="false">ABOUT</a></li>
+			<li><a href="#contactPage" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a></li>
+		</ul>
+	</div>
+	<div role="main" class="ui-content">
+	<p>
+		This is Brenton's Moving Planner Application.<br>
+		Developer: Brenton Morgan<br>
+		School/Term: Southern Illinois University, Spring 2023<br>
+		Completed Feb 11, 2023
+	</p>
+	</div>
+
+	<div data-role="footer">
+	<h4>niftyPLUS Music Application</h4>
+	</div>
+	
+</div>
+
+<!--Contact Page-->
+<div data-role="page" id="contactPage">
+
+	<div data-role="header"><h1>Contact Us</h1></div>
+
+	<div data-role="navbar">
+		<ul>
+			<li><a href="#homePage" data-icon="home" data-ajax="false" class="ui-btn-active">HOME</a></li>
+			<li><a href="#libPage" data-ajax="false">LIBRARY</a></li>
+			<li><a href="#stemPage" data-prefetch="true" data-transition="pop" data-ajax="false">STEM PLAYER</a></li>
+			<li><a href="#genrePage" data-prefetch="true" data-transition="pop" data-ajax="false">GENRES</a></li>
+			<li><a href="#aboutPage" data-prefetch="true" data-transition="pop" data-ajax="false">ABOUT</a></li>
+			<li><a href="#contactPage" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a></li>
+		</ul>
+	</div>
+
+	<div role="main" class="ui-content">
+		<form action="echo.html" method="post">
+			<div class="ui-field-contain">
+				<label for="name">Name:</label>
+				<input type="text" name="name" id="name" value="" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="email">Email:</label>
+				<input type="text" name="email" id="email" value="" />
+			</div>
+			<div class="ui-field-contain">
+				<label for="message">Message:</label>
+				<textarea name="message" id="message"></textarea>
+			</div>
+			<div class="ui-field-contain">
+				<input type="submit" name="submit" value="Send" />
+			</div>
+		</form>
+	</div>
+	<a href="#contactPopup" data-role="button" data-rel="popup">Help?</a>
+	<div data-role="popup" id="contactPopup">
+		<p>
+			Type your name, email, and message, and we will respond as soon as possible!
+		</p>
+	</div>
+
+	<div data-role="footer">
+	<h4>Brenton's Mobile Web Application</h4>
+	</div>
+	
+</div>
+
+</body>
+</html>
