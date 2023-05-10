@@ -1,0 +1,364 @@
+<!--
+Title: niftyPLUS Music Application
+Use: This html file contains all of the code for the niftyPLUS Music Application Pages
+Author: Brenton Morgan
+School/Term: Southern Illinois University, Spring 2023
+Developed: May 7, 2023
+Tested: May 7, 2023; Passed with no problems.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="themes/niftyPLUS.min.css" />
+  	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+
+<!--Stem Player-->
+<div data-role="page">
+
+	<div data-role="header"><h1>Stem Player</h1></div>
+
+	<div data-role="navbar">
+		<ul>
+			<li><a href="index.html" data-icon="home" data-ajax="false" class="ui-btn-active">HOME</a></li>
+			<li><a href="library.html" data-ajax="false">LIBRARY</a></li>
+			<li><a href="stem.html" data-prefetch="true" data-transition="pop" data-ajax="false">STEM PLAYER</a></li>
+			<li><a href="genre.html" data-prefetch="true" data-transition="pop" data-ajax="false">GENRES</a></li>
+			<li><a href="about.html" data-prefetch="true" data-transition="pop" data-ajax="false">ABOUT</a></li>
+			<li><a href="contact.html" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a></li>
+		</ul>
+	</div>
+
+    <h2>Instructions</h2>
+    <p>
+        Below are 4 songs that have been separated into stems. 
+        These stems can be volume controlled individually. 
+        Here are a few things to keep in mind while using the stem player. 
+
+        <!--A list-->
+        <ul>
+            <li>Only use the play and pause button on the vocal track.</li>
+            <li>Seeking through a track will result in the timing of the song being not synchronized.
+                <ul>
+                    <li>In order to fix this synchronization error. Set all the stems to time 0:00. Or refresh the page. </li>
+                </ul>
+            </li>
+            
+            <!--Icon in List-->
+            <li><img src="images/icons-png/alert-white.png" class="ui-li-icon">
+            All of these songs are copyright protected and are not to be distributed without permission from the copyright holder. (myself)</li>
+        </ul>
+    </p>
+
+    <!--Heart of Stone-->
+    <h2>Heart of Stone</h2>
+    <p>
+        Vocals:
+    <audio id="heartVOX" controls>
+        <source src="audio/heartofstoneVOX.mp3">
+        Vocals for Heart of Stone
+    </audio>
+        Drums:
+    <audio id="heartDRUMS" controls>
+        <source src="audio/heartofstoneDRUMS.mp3">
+        Drums for Heart of Stone
+    </audio>
+        Bass:
+    <audio id="heartBASS" controls>
+        <source src="audio/heartofstoneBASS.mp3">
+        Bass for Heart of Stone
+    </audio>
+        Others:
+    <audio id="heartOTHERS" controls>
+        <source src="audio/heartofstoneOTHERS.mp3">
+        Others for Heart of Stone
+    </audio>
+    </p>
+
+    <script>
+        var heartOTHERS = document.getElementById("heartOTHERS");
+        var heartBASS = document.getElementById("heartBASS");
+        var heartDRUMS = document.getElementById("heartDRUMS");
+        var heartVOX = document.getElementById("heartVOX");
+    
+        var change_time_state = true;
+    
+        //for the bass
+        heartVOX.onplay = function(){
+            heartBASS.play();
+            if(change_time_state){
+                heartBASS.currentTime = heartVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        heartVOX.onpause = function(){
+            heartBASS.pause();
+            change_time_state = true;
+        }
+
+        //for the drums
+        heartBASS.onplay = function(){
+            heartDRUMS.play();
+            if(change_time_state){
+                heartDRUMS.currentTime = heartVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        heartBASS.onpause = function(){
+            heartDRUMS.pause();
+            change_time_state = true;
+        }
+
+        //for the others
+        heartDRUMS.onplay = function(){
+            heartOTHERS.play();
+            if(change_time_state){
+                heartOTHERS.currentTime = heartVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        heartDRUMS.onpause = function(){
+            heartOTHERS.pause();
+            change_time_state = true;
+        }
+    </script>
+
+<!--Dangerous-->
+<h2>Dangerous</h2>
+<p>
+    Vocals:
+<audio id="dangerousVOX" controls>
+    <source src="audio/dangerousVOX.mp3">
+    Vocals for Dangerous
+</audio>
+    Drums:
+<audio id="dangerousDRUMS" controls>
+    <source src="audio/dangerousDRUMS.mp3">
+    Drums for Dangerous
+</audio>
+    Bass:
+<audio id="dangerousBASS" controls>
+    <source src="audio/dangerousBASS.mp3">
+    Bass for Dangerous
+</audio>
+    Others:
+<audio id="dangerousOTHERS" controls>
+    <source src="audio/dangerousOTHERS.mp3">
+    Others for Dangerous
+</audio>
+</p>
+
+<script>
+    var dangerousOTHERS = document.getElementById("dangerousOTHERS");
+    var dangerousBASS = document.getElementById("dangerousBASS");
+    var dangerousDRUMS = document.getElementById("dangerousDRUMS");
+    var dangerousVOX = document.getElementById("dangerousVOX");
+
+    var change_time_state = true;
+
+    //for the bass
+    dangerousVOX.onplay = function(){
+        dangerousBASS.play();
+        if(change_time_state){
+            dangerousBASS.currentTime = dangerousVOX.currentTime;
+            change_time_state = false;
+        }
+    }
+
+    dangerousVOX.onpause = function(){
+        dangerousBASS.pause();
+        change_time_state = true;
+    }
+
+    //for the drums
+    dangerousBASS.onplay = function(){
+        dangerousDRUMS.play();
+        if(change_time_state){
+            dangerousDRUMS.currentTime = dangerousVOX.currentTime;
+            change_time_state = false;
+        }
+    }
+
+    dangerousBASS.onpause = function(){
+        dangerousDRUMS.pause();
+        change_time_state = true;
+    }
+
+    //for the others
+    dangerousDRUMS.onplay = function(){
+        dangerousOTHERS.play();
+        if(change_time_state){
+            dangerousOTHERS.currentTime = dangerousVOX.currentTime;
+            change_time_state = false;
+        }
+    }
+
+    dangerousDRUMS.onpause = function(){
+        dangerousOTHERS.pause();
+        change_time_state = true;
+    }
+</script>
+
+<!--Don't Mind-->
+<h2>Don't Mind</h2>
+    <p>
+        Vocals:
+    <audio id="dontmindVOX" controls>
+        <source src="audio/dontmindVOX.mp3">
+        Vocals for Don't Mind
+    </audio>
+        Drums:
+    <audio id="dontmindDRUMS" controls>
+        <source src="audio/dontmindDRUMS.mp3">
+        Drums for Don't Mind
+    </audio>
+        Bass:
+    <audio id="dontmindBASS" controls>
+        <source src="audio/dontmindBASS.mp3">
+        Bass for Don't Mind
+    </audio>
+        Others:
+    <audio id="dontmindOTHERS" controls>
+        <source src="audio/dontmindOTHERS.mp3">
+        Others for Don't Mind
+    </audio>
+    </p>
+
+    <script>
+        var dontmindOTHERS = document.getElementById("dontmindOTHERS");
+        var dontmindBASS = document.getElementById("dontmindBASS");
+        var dontmindDRUMS = document.getElementById("dontmindDRUMS");
+        var dontmindVOX = document.getElementById("dontmindVOX");
+    
+        var change_time_state = true;
+    
+        //for the bass
+        dontmindVOX.onplay = function(){
+            dontmindBASS.play();
+            if(change_time_state){
+                dontmindBASS.currentTime = dontmindVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        dontmindVOX.onpause = function(){
+            dontmindBASS.pause();
+            change_time_state = true;
+        }
+
+        //for the drums
+        dontmindBASS.onplay = function(){
+            dontmindDRUMS.play();
+            if(change_time_state){
+                dontmindDRUMS.currentTime = dontmindVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        dontmindBASS.onpause = function(){
+            dontmindDRUMS.pause();
+            change_time_state = true;
+        }
+
+        //for the others
+        dontmindDRUMS.onplay = function(){
+            dontmindOTHERS.play();
+            if(change_time_state){
+                dontmindOTHERS.currentTime = dontmindVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        dontmindDRUMS.onpause = function(){
+            dontmindOTHERS.pause();
+            change_time_state = true;
+        }
+    </script>
+
+    <!--Sunglasses At Night-->
+    <h2>Sunglasses At Night</h2>
+    <p>
+        Vocals:
+    <audio id="sunglassesatnightVOX" controls>
+        <source src="audio/sunglassesatnightVOX.mp3">
+        Vocals for Sunglasses At Night
+    </audio>
+        Drums:
+    <audio id="sunglassesatnightDRUMS" controls>
+        <source src="audio/sunglassesatnightDRUMS.mp3">
+        Drums for Sunglasses At Night
+    </audio>
+        Bass:
+    <audio id="sunglassesatnightBASS" controls>
+        <source src="audio/sunglassesatnightBASS.mp3">
+        Bass for Sunglasses At Night
+    </audio>
+        Others:
+    <audio id="sunglassesatnightOTHERS" controls>
+        <source src="audio/sunglassesatnightOTHERS.mp3">
+        Others for Sunglasses At Night
+    </audio>
+    </p>
+
+    <script>
+        var sunglassesatnightOTHERS = document.getElementById("sunglassesatnightOTHERS");
+        var sunglassesatnightBASS = document.getElementById("sunglassesatnightBASS");
+        var sunglassesatnightDRUMS = document.getElementById("sunglassesatnightDRUMS");
+        var sunglassesatnightVOX = document.getElementById("sunglassesatnightVOX");
+    
+        var change_time_state = true;
+    
+        //for the bass
+        sunglassesatnightVOX.onplay = function(){
+            sunglassesatnightBASS.play();
+            if(change_time_state){
+                sunglassesatnightBASS.currentTime = sunglassesatnightVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        sunglassesatnightVOX.onpause = function(){
+            sunglassesatnightBASS.pause();
+            change_time_state = true;
+        }
+
+        //for the drums
+        sunglassesatnightBASS.onplay = function(){
+            sunglassesatnightDRUMS.play();
+            if(change_time_state){
+                sunglassesatnightDRUMS.currentTime = sunglassesatnightVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        sunglassesatnightBASS.onpause = function(){
+            sunglassesatnightDRUMS.pause();
+            change_time_state = true;
+        }
+
+        //for the others
+        sunglassesatnightDRUMS.onplay = function(){
+            sunglassesatnightOTHERS.play();
+            if(change_time_state){
+                sunglassesatnightOTHERS.currentTime = sunglassesatnightVOX.currentTime;
+                change_time_state = false;
+            }
+        }
+    
+        sunglassesatnightDRUMS.onpause = function(){
+            sunglassesatnightOTHERS.pause();
+            change_time_state = true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!--
+Title: niftyPLUS Music Application
+Use: This html file contains all of the code for the niftyPLUS Music Application Pages
+Author: Brenton Morgan
+School/Term: Southern Illinois University, Spring 2023
+Developed: May 7, 2023
+Tested: May 7, 2023; Passed with no problems.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="themes/niftyPLUS.min.css" />
+  	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+
+<body>
+
+<!--Genres Page-->
+<div data-role="page" id="genrePage">
+
+	<div data-role="header"><h1>Genres</h1></div>
+
+	<div data-role="navbar">
+		<ul>
+			<li><a href="index.html" data-icon="home" data-ajax="false" class="ui-btn-active">HOME</a></li>
+			<li><a href="library.html" data-ajax="false">LIBRARY</a></li>
+			<li><a href="stem.html" data-prefetch="true" data-transition="pop" data-ajax="false">STEM PLAYER</a></li>
+			<li><a href="genre.html" data-prefetch="true" data-transition="pop" data-ajax="false">GENRES</a></li>
+			<li><a href="about.html" data-prefetch="true" data-transition="pop" data-ajax="false">ABOUT</a></li>
+			<li><a href="contact.html" data-prefetch="true" data-transition="pop" data-ajax="false">CONTACT</a></li>
+		</ul>
+	</div>
+
+    <!--Popup-->
+    <a href="#contactPopup" data-role="button" data-rel="popup">Genres</a>
+	<div data-role="popup" id="contactPopup">
+		<p>
+			Here is a list of genre options in the music library, and a brief description of each. 
+		</p>
+	</div>
+
+    <h2>Blues</h2>
+	<p>
+		Blues music is most closely related to folk music. 
+        The biggest difference is that blues music feature more sad melodies and lyrics. 
+        Blues originated in the Deep South as work songs, chants, and narrative ballads.
+	</p>
+    <h2>Classical</h2>
+	<p>
+		Classical music is generally Western orchastral arrangements, 
+        featuring large symphonies and usually lacking in lyrics. 
+	</p>
+    <h2>Country</h2>
+	<p>
+		Country music focuses on blue-collar American life. 
+        It often utilizes simple string instruments, such as guitars, fiddles, banjos. 
+	</p>
+    <h2>Electronic</h2>
+	<p>
+		Electronic music is typically upbeat dance music that has been heavily processed on a computer. 
+	</p>
+    <h2>Folk</h2>
+	<p>
+		Folk music is a rural type of music similar to blues and country. These songs are simple and are passed down for generations. 
+	</p>
+    <h2>Hip-hop</h2>
+	<p>
+		Hip-hop, or rap, is a kind of music that utilizes a strong rhythmic beat, and intense vocal rhythm. 
+	</p>
+    <h2>Jazz</h2>
+	<p>
+		Jazz is a kind of ragtime music that often utilizes very warm instruments, like pianos, saxaphones, trumpets, etc. 
+        Improvization is very important in jazz. 
+	</p>
+	<h2>New Age</h2>
+	<p>
+		New age music is a type of ambient music meant more to be a sort of background or lead in relaxation. 
+	</p>
+    <h2>Reggae</h2>
+	<p>
+		Reggae music is typically slower, with accents on the offbeat. This creates a sort of relaxed bounce. 
+	</p>
+    <h2>Rock</h2>
+	<p>
+		Rock is a form of music with an intense and strong beat/track. It utilizes intense drums, electric guitars, bass, and vocals. 
+	</p>
+
+	<div data-role="footer">
+	<h4>niftyPLUS Music Application</h4>
+	</div>
+	
+</div>
+
+</body>
+</html>
